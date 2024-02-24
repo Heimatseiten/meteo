@@ -15,6 +15,7 @@ function refreshWeather(respond) {
   humidityElement.innerHTML = `${respond.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${respond.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
+  getForecast(respond.data.city);
 }
 
 function formatDate(date) {
@@ -47,7 +48,15 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
   searchCity(searchInput.value);
 }
-function displayForecast() {
+
+function getForecast(city) {
+  let apiKey = "9tb7143e5ff804f5od02a6f195ae433e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(respond) {
+  console.log(respond.data);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -75,4 +84,3 @@ function displayForecast() {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Cologne");
-displayForecast();
