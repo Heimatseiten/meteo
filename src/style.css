@@ -84,12 +84,14 @@ header {
   color: #a3bebe;
 }
 .weather-forecast-temperatures {
-  font-size: 13px;
+  font-size: 15px;
   color: #f76b8a;
 }
 .weather-forecast-icon {
-  width: 38px;
-  text-align: center;
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 autos;
 }
 main {
   padding: 30px 0;
