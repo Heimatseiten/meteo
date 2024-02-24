@@ -87,7 +87,10 @@ header {
   font-size: 13px;
   color: #f76b8a;
 }
-
+.weather-forecast-icon {
+  width: 38px;
+  text-align: center;
+}
 main {
   padding: 30px 0;
 }
