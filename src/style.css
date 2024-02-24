@@ -83,10 +83,9 @@ header {
 }
 .weather-forecast-temperatures {
   font-size: 13px;
+  color: #f76b8a;
 }
-.weather-forecast-temperatures-min {
-  color: #a3bebe;
-}
+
 main {
   padding: 30px 0;
 }
